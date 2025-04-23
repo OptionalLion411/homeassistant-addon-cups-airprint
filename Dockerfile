@@ -65,6 +65,8 @@ RUN useradd \
   print \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
+RUN chown 0:0 /usr/lib/cups/filter/rastertospl
+
 EXPOSE 631
 
 RUN chmod a+x /run.sh
