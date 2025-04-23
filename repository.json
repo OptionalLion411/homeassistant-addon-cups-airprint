@@ -1,5 +1,5 @@
 {
-  "name": "Home Assistant CUPS + Airprint Add-On repository",
-  "url": "https://github.com/zajac-grzegorz/homeassistant-addon-cups-airprint",
-  "maintainer": "Grzegorz Zajac"
+  "name": "Home Assistant CUPS with HP 17x support",
+  "url": "https://github.com/OptionalLion411/homeassistant-addon-cups-airprint",
+  "maintainer": "forked OptionalLion411"
 }
