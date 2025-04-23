@@ -1,5 +1,5 @@
 name: CUPS
-version: "0.2"
+version: "0.3"
 slug: cupsik
 description: A CUPS print server with working AirPrint
 arch:
