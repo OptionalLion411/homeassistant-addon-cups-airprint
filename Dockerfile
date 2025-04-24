@@ -52,8 +52,7 @@ COPY install-hp.sh /tmp
 RUN cd /tmp \
   && curl https://ftp.hp.com/pub/softlib/software13/printers/MFP170/uld-hp_V1.00.39.12_00.15.tar.gz -o uld.tar.gz \
   && tar -xvf ./uld.tar.gz \
-  && mv install-hp.sh uld/ \
-  && ./uld/install-hp.sh
+  && mv install-hp.sh uld/
   # && mv uld/x86_64/rastertospl /usr/lib/cups/filter/ \
   # && chmod -w /usr/lib/cups/filter/rastertospl
 
@@ -69,10 +68,12 @@ RUN useradd \
   print \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
-RUN chown 0:0 /usr/lib/cups/filter/rastertospl
+# RUN chown 0:0 /usr/lib/cups/filter/rastertospl
 
 EXPOSE 631
 
 RUN chmod a+x /run.sh
+RUN chmod a+x /tmp/uld/install-hp.sh 
 
 CMD ["/run.sh"]
+CMD ["/tmp/uld/install-hp.sh"]
