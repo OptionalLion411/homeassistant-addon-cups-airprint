@@ -47,11 +47,15 @@ RUN cd /tmp \
   && mv cnijfilter2-6.80-1-deb/packages/cnijfilter2_6.80-1_${ARCH}.deb cnijfilter2_6.80-1.deb \
   && apt install ./cnijfilter2_6.80-1.deb
 
+COPY install-hp.sh /tmp
+
 RUN cd /tmp \
   && curl https://ftp.hp.com/pub/softlib/software13/printers/MFP170/uld-hp_V1.00.39.12_00.15.tar.gz -o uld.tar.gz \
   && tar -xvf ./uld.tar.gz \
-  && mv uld/x86_64/rastertospl /usr/lib/cups/filter/ \
-  && chmod -w /usr/lib/cups/filter/rastertospl
+  && mv install-hp.sh /uld \
+  && ./install-hp.sh
+  # && mv uld/x86_64/rastertospl /usr/lib/cups/filter/ \
+  # && chmod -w /usr/lib/cups/filter/rastertospl
 
 COPY rootfs /
 
