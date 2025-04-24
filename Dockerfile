@@ -75,5 +75,5 @@ EXPOSE 631
 RUN chmod a+x /run.sh
 RUN chmod a+x /tmp/uld/install-hp.sh 
 
-CMD ["/run.sh"]
 CMD ["/tmp/uld/install-hp.sh"]
+CMD ["/run.sh"]
