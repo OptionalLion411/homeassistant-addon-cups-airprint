@@ -53,7 +53,7 @@ RUN cd /tmp \
   && curl https://ftp.hp.com/pub/softlib/software13/printers/MFP170/uld-hp_V1.00.39.12_00.15.tar.gz -o uld.tar.gz \
   && tar -xvf ./uld.tar.gz \
   && mv install-hp.sh uld/ \
-  && ./install-hp.sh
+  && ./uld/install-hp.sh
   # && mv uld/x86_64/rastertospl /usr/lib/cups/filter/ \
   # && chmod -w /usr/lib/cups/filter/rastertospl
 
