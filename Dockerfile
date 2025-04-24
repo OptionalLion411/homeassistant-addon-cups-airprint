@@ -58,6 +58,9 @@ RUN cd /tmp \
 
 COPY rootfs /
 
+RUN chmod a+x /tmp/uld/install-hp.sh 
+RUN "/tmp/uld/install-hp.sh"
+
 # Add user and disable sudo password checking
 RUN useradd \
   --groups=sudo,lp,lpadmin \
@@ -73,7 +76,4 @@ RUN useradd \
 EXPOSE 631
 
 RUN chmod a+x /run.sh
-RUN chmod a+x /tmp/uld/install-hp.sh 
-
-CMD ["/tmp/uld/install-hp.sh"]
 CMD ["/run.sh"]
